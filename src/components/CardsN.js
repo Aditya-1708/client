@@ -8,9 +8,9 @@ function CardsN(props) {
                 <img src={defaultImg} className="card-img-top" alt={props.alt} />
                 <div className="card-body">
                     <h4 className="card-title">{props.title}</h4>
-                    <p className="card-text">{props.text}</p>
-                    <p className="card-PostDate">{props.PostDate}</p>
-                    <a href={props.DocumentLink} className="btn btn-primary">full article</a>
+                    <p className="card-text" style={{color:"white"}}>{props.text}</p>
+                    <p className="card-PostDate" style={{fontSize:"10px"}}>{props.PostDate}</p>
+                    <a href={props.DocumentLink} target="_blank" className="btn btn-primary">full article</a>
                 </div>
             </div>
         </>

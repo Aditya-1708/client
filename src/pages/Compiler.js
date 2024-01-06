@@ -12,7 +12,6 @@ import java from "../icons/java.svg";
 import javascript from "../icons/javascript.svg";
 import AI from "../icons/openai.svg";
 import play from "../icons/play.svg";
-import BlinkingButton from '../components/BlinkingButton';
 import "./Compiler.css";
 
 //logo credits to icons website
@@ -22,7 +21,6 @@ const { t } = useTranslation();
 const [variant, setVariant] = useState("light");
 const [program, setProgram] = useState("");
 const [output, setOutput] = useState("");
-const [askAI,setAskAI]=useState(false);
 const [outputAI, setOutputAI]= useState("");
 const [language,setLanguage]=useState(0);
 const [languagestr,setLanguagestr]=useState('Select Language');
@@ -38,6 +36,8 @@ const handleToReset = () => {
     setProgram("");
     setOutput("");
     setOutputAI("");
+    setLanguagestr('Select Language');
+    setLanguage(0);
 };
 
 const classFinder=()=>{
@@ -51,30 +51,35 @@ document.getElementById("dropdown").style.width="155px"
 }
 async function handelAskAI() {
     const formData= new FormData();
-    formData.append('prompt',output);
-    try {
-        const response = await fetch('http://localhost:4000/users/askAI', {
-            method:"POST",
-            body:formData,
-            credentials: 'include'
-        });
-        const data = await response.json();
-        setOutputAI(data.response);
-        setAskAI(false);
-    } catch (error) {
-        console.log(error);
+    const prompt="program:"+program+"output:"+output+" debug the error and suggest me what to do? do not send the whole debugged code";
+    formData.append('prompt',prompt);
+    if(program!==""){
+        try {
+            const response = await fetch('http://localhost:4000/users/askAI', {
+                method:"POST",
+                body:formData,
+                credentials: 'include'
+            });
+            const data = await response.json();
+            setOutputAI(data.response);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    else{
+        return;
     }
 };
 
 async function runcode(){
     try{
+        setOutput("");
+        setOutputAI("");
         if(languagestr==='Select Language'){
             alert("Select a language first")
             return
         }
         if(program===''){
-            setOutput("");
-            setOutputAI("");
             return;
         }
         let json;
@@ -95,7 +100,6 @@ async function runcode(){
         });
         const data=await response.json();
             if(data.response.stderr){
-                setAskAI(true);
                 setOutput(data.response.stderr);
                 document.getElementById("code-output").focus()
             }
@@ -108,10 +112,6 @@ async function runcode(){
         console.log(error)
     }
 };
-
-// const handleOnChange = (Event) => {
-// setText(Event.target.value);
-// };
 
 const handle1 = () => {
 document.getElementById("button1").style.color = "black";
@@ -149,7 +149,7 @@ setVariant("light");
 };
 
 return (<>
-    <NavigationBar/>
+<NavigationBar language={true}/>
 <div className="container ">
     <div className="row  my-2">
     <div
@@ -164,50 +164,21 @@ return (<>
             zIndex: "1",
         }}
         >
-        {/* <button
-            id="CopyButton"
-            onClick={handleCopy}
-            className="btn btn-primary"
-            onMouseEnter={handleButtonCopyEnter}
-            onMouseLeave={handleButtonCopyLeave}
-            style={{
-            marginLeft: "2px",
-            padding: "0px 2px",
-            paddingBottom: "2px",
-            backgroundColor: "grey",
-            color: "black",
-            borderColor: "black",
-            }}
-        >
-            <img src={Copy} alt="Copy" />
-        </button> */}
         </div>
 
-        {/* <textarea
-        name="code"
-        className="form-control white-placeholder"
-        id="textfield"
-        rows="20"
-        autoFocus
-        placeholder={t("compilerTextAreaPlaceholder1")}
-        value={text}
-        onChange={handleOnChange}
-        style={{
-            background: "black",
-            color: "white",
-        }}
-        ></textarea> */}
-
+        <div style={{height:"75vh", width:"50vw"}}>
         <Editor
             id='textfield'
             height='75vh'
             width='100%'
             className='mx-1'
             theme="hc-black"
+            language={languagestr}
             value={program}
             onChange={(newValue)=>{setProgram(newValue)}}
-            options={{tabSize: 7,autoClosingQuotes:"always"}}
+            options={{tabSize: 7,autoClosingQuotes:"always",formatOnPaste:true}}
         />
+        </div>
         <div className="d-flex flex-row">
         <button
             id="button1"
@@ -237,7 +208,7 @@ return (<>
             {t("compilerButton2")}
         </button>
         {
-            askAI?<BlinkingButton onClick={handelAskAI}/>:<button
+            <button
             id="button3"
             className="btn btn-primary my-2 mx-2"
             onMouseLeave={handleLeave3}

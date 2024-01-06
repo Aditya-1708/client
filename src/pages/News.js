@@ -33,15 +33,15 @@ function News(props) {
     // document.body.style.background = "#242124";
 return (
 <>
-<NavigationBar/>
+<NavigationBar language={false}/>
 
 <h2 style={{ color: "white" }} className="text-center my-2">
-    News
+    {t('technewsTop')}
     </h2>
     {loading ? (
         <p>Loading...</p>
       ) : (
-        <div>
+        <div id="cardsPlace">
           {array.map((item) => (
             <CardsN
               key={item._id}

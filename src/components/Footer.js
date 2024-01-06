@@ -63,7 +63,7 @@ return (
                 {t('footerContactUs')} :
                     <a
                         target="blank"
-                        href="#"
+                        href="https://www.linkedin.com/in/aditya-umesh-b577651a8"
                     >
                         <img
                         style={{padding:"0px 5px"}}
@@ -88,7 +88,7 @@ return (
                 {t('footerFollowUs')} :
                     <a
                         target="blank"
-                        href="https://github.com/iamabhishekagarwal/webDevProj-BIT.git"
+                        href="https://github.com/Aditya-1708/CodeVista.git"
                     >
                         <img
                         style={{padding:"0px 5px"}}

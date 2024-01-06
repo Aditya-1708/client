@@ -30,7 +30,7 @@ setTimeout(() => {
 }, []);
 return (
 <>
-    <NavigationBar />
+<NavigationBar language={false}/>
     <h2 style={{ color: "white" }} className="text-center my-2">
     {t("hackathonTop")}
     </h2>

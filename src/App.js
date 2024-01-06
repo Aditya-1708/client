@@ -14,9 +14,10 @@ import Research from './pages/Research';
 import PrivateRoutes from './utils/PrivateRoutes'
 function App() {
   const [progress, setProgress] = useState(0);
-  const [isAuthenticated,setIsAuthenticated]=useState(false);
+  const [isAuthenticated,setIsAuthenticated]=useState(sessionStorage.getItem("isAuthenticated")==="true"?true:false);
   function handleSignInSuccess(){
     setIsAuthenticated(true)
+    sessionStorage.setItem("isAuthenticated","true")
   }
   return (
     <Router>
@@ -42,7 +43,6 @@ function App() {
         path="/Signup"
         element={<Signup onSignInSuccess={handleSignInSuccess} setProgress={setProgress}/>}
         ></Route>
-        <Route element={<PrivateRoutes onSignInSuccess={handleSignInSuccess} isAuthenticated={isAuthenticated}/>}>
         <Route
         exact
         path="/Home"
@@ -68,7 +68,6 @@ function App() {
         path="/Research"
         element={<Research setProgress={setProgress}/>}
         ></Route>
-        </Route>
       </Routes>
     </div>
     </Router>

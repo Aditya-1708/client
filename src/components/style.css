@@ -1,13 +1,3 @@
-
-body {
-  position: relative;
-  height: 100%;
-}
-
-.swiper-slide .subtitle{
-  color:white;
-}
-
 #swiper {
   margin: 0;
   width: 100%;
@@ -15,10 +5,11 @@ body {
 }
 
 .swiperSlide {
-  color: #fff;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .parallax-bg {
@@ -36,255 +27,222 @@ body {
   .swiper-slide .title1 {
     margin-top: 30%;
     padding: auto auto;
-    font-size: 30px;
-    font-weight: 300;
-  }
-  .swiper-slide .title2 {
-    margin-top: 30%;
-    padding: auto auto;
-    font-size: 30px;
-    font-weight: 300;
-  }
-  .swiper-slide .title3 {
-    margin-top: 30%;
-    padding: auto auto;
-    font-size: 30px;
-    font-weight: 300;
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
   }
 
-  .swiper-slide .subtitle {
-    padding: auto auto;
-    text-align: center;
-    font-weight: 600;
+  .swiper-slide #title1body {
+    padding: 40px;
+    text-align: justify;
+    font-weight: 300;
     font-size: 12px;
-    
+    color: white;
   }
-  .swiper-slide .text p{
-    padding: 0px 60px;
-    font-size: 14px;
-    max-width: 400px;
-    line-height: 1.3;
+  .swiper-slide #titleBody {
+    padding: 10px;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 12px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 }
+
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .swiper-slide .title1 {
     margin-top: 30%;
     padding: auto auto;
-    font-size: 55px;
-    font-weight: 300;
-  }
-  .swiper-slide .title2 {
-    margin-top: 30%;
-    padding: auto auto;
-    font-size: 55px;
-    font-weight: 300;
-  }
-  .swiper-slide .title3 {
-    margin-top: 30%;
-    padding: auto auto;
-    font-size: 55px;
-    font-weight: 300;
-  }
-
-  .swiper-slide .subtitle {
-    padding: auto auto;
-    text-align: center;
+    font-size: 36px;
     font-weight: 600;
-    font-size: 20px;
-    
+    color: white;
   }
 
-  .swiper-slide .text p{
-    padding: 0px 60px;
-    font-size: 14px;
-    max-width: 400px;
-    line-height: 1.3;
+  .swiper-slide #title1body {
+    padding: 40px;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 20px;
+    color: white;
+  }
+  .swiper-slide #titleBody {
+    padding: 15px;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 20px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 }
+
 @media only screen and (min-width: 768px) {
   .swiper-slide .title1 {
     margin-top: 30%;
-    text-align: center;
-    font-size: 70px;
-    font-weight: 300;
-  }
-  .swiper-slide .title2 {
-    margin-top: 30%;
-    text-align: center;
-    font-size: 70px;
-    font-weight: 300;
+    text-align: justify;
+    font-size: 48px;
+    font-weight: 400;
+    color: white;
   }
 
-  .swiper-slide .subtitle {
-    text-align: center;
-    font-weight: 600;
+  .swiper-slide #title1body {
+    padding: 40px;
+        text-align: justify;
+    font-weight: 300;
     font-size: 25px;
-    
+    color: white;
   }
-
-  .swiper-slide .text p{
-    padding: 0px 60px;
-    font-size: 14px;
-    max-width: 400px;
-    line-height: 1.3;
+  .swiper-slide #titleBody {
+    padding: 20px;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 25px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 }
+
 @media only screen and (min-width: 992px) {
   .swiper-slide .title1 {
     margin-top: 13%;
     padding: auto auto;
-    font-size: 70px;
-    font-weight: 300;
-  }
-  .swiper-slide .title2 {
-    margin-top: 13%;
-    padding: auto auto;
-    font-size: 70px;
-    font-weight: 300;
-  }
-  .swiper-slide .title3 {
-    margin-top: 13%;
-    padding: auto auto;
-    font-size: 70px;
-    font-weight: 300;
-  }
-  .swiper-slide .subtitle {
-    padding: auto auto;
-    text-align: center;
-    font-weight: 600;
-    font-size: 25px;
-    
-  }
-  .swiper-slide .text p{
+    font-size: 60px;
+    font-weight: 400;
     color: white;
-    padding: auto auto;
-    font-size: 30px;
-    max-width: 400px;
-    line-height: 1.3;
+  }
+
+  .swiper-slide #title1body {
+    padding: 40px;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 25px;
+    color: white;
+  }
+  .swiper-slide #titleBody {
+    padding: 25px;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 25px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 }
+
 @media only screen and (min-width: 1200px) {
   .swiper-slide .title1 {
     font-family: 'Open Sans', sans-serif;
-    text-align: center;
+    text-align: justify;
     margin-top: 13%;
-    font-size: 70px;
-    font-weight: 300;
+    font-size: 72px;
+    font-weight: 400;
+    color: white;
   }
-  .swiper-slide .title2 {
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    margin-top: 13%;
-    font-size: 70px;
-    font-weight: 300;
-  }
-  .swiper-slide .title3 {
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    margin-top: 13%;
-    font-size: 70px;
-    font-weight: 300;
-  }
-  .swiper-slide .subtitle {
-    text-align: center;
-    font-weight: 600;
-    font-size: 25px;
-    
-  }
-  .swiper-slide .text p{
-    padding: 0px 60px;
-    font-size: 14px;
-    max-width: 400px;
-    line-height: 1.3;
-  }
-} 
 
-/*landscape*/
+  .swiper-slide #title1body {
+    padding: 40px;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 25px;
+    color: white;
+  }
+  .swiper-slide #titleBody {
+    padding: 30px;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 25px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 320px) and (orientation: landscape) {
   .swiper-slide .title1 {
-    text-align: center;
+    text-align: justify;
     margin-top: 13%;
-    font-size: 23px;
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+  }
+
+  .swiper-slide #title1body {
+    padding: 40px;
+    text-align: justify;
     font-weight: 300;
-  }
-
-  .swiper-slide .subtitle {
-    text-align: center;
-    font-weight: 600;
     font-size: 10px;
-    
+    color: white;
   }
+  .swiper-slide #titleBody {
+    padding: 10px;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 10px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
 
-  .swiper-slide .text p{
-    padding: 0px 60px;
-    font-size: 14px;
-    max-width: 400px;
-    line-height: 1.3;
-  }
-} 
-@media only screen and (max-width: 768px) and (orientation:landscape){
+@media only screen and (max-width: 768px) and (orientation: landscape) {
   .swiper-slide .title1 {
     margin-top: 13%;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 300;
+    text-align: justify;
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
   }
 
-  .swiper-slide .subtitle {
-    text-align: center;
-    font-weight: 600;
+  .swiper-slide #title1body {
+    padding: 15px;
+    text-align: justify;
+    font-weight: 300;
     font-size: 12px;
-    
+    color: white;
   }
-
-  .swiper-slide .text p{
-    padding: 0px 60px;
-    font-size: 14px;
-    max-width: 400px;
-    line-height: 1.3;
+  .swiper-slide #titleBody {
+    padding: 15px;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 12px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 }
-@media only screen and (max-width: 992px) and (orientation:landscape) {
-  .swiper-slide .title1.swiperSlide {
+
+@media only screen and (max-width: 992px) and (orientation: landscape) {
+  .swiper-slide .title1 {
     margin-top: 13%;
-    font-size: 32px;
-    font-weight: 300;
-  }
-
-  .swiper-slide .subtitle {
-    text-align: center;
-    font-weight: 600;
-    font-size: 13px;
-    
-  }
-
-  .swiper-slide .text p{
+    font-size: 28px;
+    font-weight: 400;
     color: white;
-    padding: 0px 60px;
-    font-size: 14px;
-    max-width: 400px;
-    line-height: 1.3;
   }
-}
-@media only screen and (max-width: 2000px) and (orientation:landscape) {
-  .swiper-slide .title1.swiperSlide {
-    margin-top: 13%;
-    font-size: 32px;
+
+  .swiper-slide #title1body {
+    padding: 40px;
+    text-align: justify;
     font-weight: 300;
-  }
-
-  .swiper-slide .subtitle {
-    text-align: center;
-    font-weight: 600;
     font-size: 13px;
-    
-  }
-
-  .swiper-slide .text p{
     color: white;
-    padding: 0px 60px;
-    font-size: 14px;
-    max-width: 400px;
-    line-height: 1.3;
+  }
+  .swiper-slide #titleBody {
+    padding: 20px;
+    text-align: justify;
+    font-weight: 300;
+    font-size: 13px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
 }

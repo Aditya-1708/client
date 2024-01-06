@@ -41,30 +41,24 @@ return (
         <div className="title1  swiperSlide" data-swiper-parallax="-300">
         {t('homeWelcomeMessage')}
         </div>
-        <div className="subtitle"  data-swiper-parallax="-200">
+        <div className="text" id="titleBody" data-swiper-parallax="-200">
         {t('homeWelcomeCaption')}
         </div>
     </SwiperSlide>
     <SwiperSlide>
-        <div className="title2 swiperSlide" data-swiper-parallax="-300">
+        <div className="title1 swiperSlide" data-swiper-parallax="-300">
         {t('slide2')}
         </div>
-        {/* <div className="subtitle" data-swiper-parallax="-200">
-        Subtitle
-        </div> */}
-        <div className="text" id="title2body"data-swiper-parallax="-100">
-        <p>{t('slide2content')}</p>
+        <div className="text" id="title1body"data-swiper-parallax="-100">
+        {t('slide2content')}
         </div>
     </SwiperSlide>
     <SwiperSlide>
-        <div className="title3 swiperSlide"  data-swiper-parallax="-300">
+        <div className="title1 swiperSlide"  data-swiper-parallax="-300">
         {t('slide3')}
         </div>
-        {/* <div className="subtitle" data-swiper-parallax="-200">
-        Subtitle
-        </div> */}
-        <div className="text" id="title3body"data-swiper-parallax="-100">
-        <p>{t('slide3content')}</p>
+        <div className="text" id="title1body"data-swiper-parallax="-100">
+        {t('slide3content')}
         </div>
     </SwiperSlide>
     </Swiper>

@@ -26,7 +26,7 @@ setTimeout(() => {
 }, []);
 return (
 <>
-    <NavigationBar/>
+<NavigationBar language={true}/>
     <section id="section1" >
     <div style={{width:"100vw",height:"90vh"}}>
     <CarouselComponent />
@@ -83,7 +83,7 @@ return (
 
         <div>
         <h3>{t('homeOurMission')}</h3>
-        <p>{t('homeOurMissionText')}</p>
+        <p style={{textAlign:"justify"}}>{t('homeOurMissionText')}</p>
         </div>
         <div>
         <h3>{t('homeOurVision')}</h3>
@@ -98,23 +98,31 @@ return (
         <h2 className="text-center">{t('homeOurTeam')}</h2>
         </div>
         <div className="my-4 text-center">
-        <img id="ourTeamImg" className="" src={GroupImage} alt="Image" />
-        </div>
-        <div className="row my-3 text-center" style={{color:"white"}}>
-            <div className="col-6">
-                <p>{t('heyits')} <span style={{color:"cyan"}}>Aditya Umesh</span> {t('umesh')}</p>
-            </div>
-            
-            <div className="col-6">
-                <p>{t('heyits')} <span style={{color:"cyan"}}>Abhishek</span> {t('abhishek')}   </p>
-            </div>
-            <div className="col-6">
-                <p>{t('heyits')} <span style={{color:"cyan"}}>Keshav</span> {t('keshav')}  </p>
-            </div>
-            <div className="col-6 ">
-                <p>{t('heyits')} <span style={{color:"cyan"}}>Aditya Mishra</span> {t('mishra')}</p>
-            </div>
-        </div>
+  <img id="ourTeamImg" className="" src={GroupImage} alt="Image" />
+</div>
+<div className="row my-3 text-center" style={{ color: "white" }}>
+<div className="col-6">
+  <p style={{ textAlign: "justify" }}>
+    {t('heyits')} <div style={{ color: "cyan", display: "inline" }}>Aditya Umesh</div> {t('umesh')}
+  </p>
+</div>
+<div className="col-6">
+  <p style={{ textAlign: "justify" }}>
+    {t('heyits')} <div style={{ color: "cyan", display: "inline" }}>Abhishek</div> {t('abhishek')}
+  </p>
+</div>
+<div className="col-6">
+  <p style={{ textAlign: "justify" }}>
+    {t('heyits')} <div style={{ color: "cyan", display: "inline" }}>Keshav</div> {t('keshav')}
+  </p>
+</div>
+<div className="col-6">
+  <p style={{ textAlign: "justify" }}>
+    {t('heyits')} <div style={{ color: "cyan", display: "inline" }}>Aditya Mishra</div> {t('mishra')}
+  </p>
+</div>
+</div>
+
     </div>
     </section>
 

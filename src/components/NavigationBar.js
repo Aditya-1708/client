@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { LinkContainer } from "react-router-bootstrap";
 import logo from "../images/Cv.png";
 
-function NavigationBar() {
+function NavigationBar(language) {
 const handleItemClick = (eventKey, event) => {
 if (eventKey === "item1") {
     changeLanguage("en");
@@ -32,7 +32,9 @@ document.getElementById("Logout").style.color = "red";
 const handleTouchLeave = () => {
 document.getElementById("Logout").style.color = "#f08080";
 };
-
+const handleLogout=()=>{
+sessionStorage.setItem("isAuthenticated","false");
+};
 return (
 <div>
     <Navbar 
@@ -48,6 +50,7 @@ return (
             id="Logout"
             onMouseEnter={handleTouchEnter}
             onMouseLeave={handleTouchLeave}
+            onClick={handleLogout}
             >
             {t("navLogout")}
             </span>
@@ -57,12 +60,6 @@ return (
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav
-        // className="me-auto"
-        // onClick={() => {
-        // document
-        //     .querySelector(".navbar-collapse")
-        //     .classList.remove("show");
-        // }}
         ><LinkContainer to="/Home">
         <Navbar.Brand>
             <img
@@ -72,7 +69,7 @@ return (
             className="d-inline-block align-top"
             alt="Logo"
             />{" "}
-            {t("brandName")}
+           {t("brandName")}
         </Navbar.Brand>
         </LinkContainer>
 
@@ -88,15 +85,14 @@ return (
             <Nav.Link>{t("navHackathon")}</Nav.Link>
             </LinkContainer>
 
-            <LinkContainer to="/TechNewsUser">
+            <LinkContainer to="/News">
             <Nav.Link>{t("navTechNews")}</Nav.Link>
             </LinkContainer>
 
             <LinkContainer to="/Research">
             <Nav.Link>{t("navResearch")}</Nav.Link>
             </LinkContainer>
-
-            <NavDropdown
+            {language.language?<NavDropdown
             menuVariant="dark"
             title={t("navLanguage")}
             id="basic-nav-dropdown"
@@ -111,7 +107,7 @@ return (
             <NavDropdown.Item eventKey="item3" href="#action/3.3">
                 {t("navLanguageDropdown3")}
             </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown>:<></>}
         </Nav>
         </Navbar.Collapse>
     </Container>
